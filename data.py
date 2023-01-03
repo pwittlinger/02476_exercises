@@ -1,5 +1,7 @@
 import torch
 import os
+import numpy
+import scipy
 
 
 def mnist():
