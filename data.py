@@ -1,8 +1,9 @@
 import torch
 import os
-import numpy
 import scipy
-
+import pandas
+import seaborn
+import numpy
 
 def mnist():
     os.chdir("C:\Users\paulw\Desktop\mlops\dtu_mlops\data")
