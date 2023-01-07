@@ -34,6 +34,7 @@ class TrainOREvaluate(object):
         print("Training day and night")
         parser = argparse.ArgumentParser(description='Training arguments')
         parser.add_argument('--lr', default=1e-3)
+        print(parser)
         # add any additional argument that you want
         args = parser.parse_args(sys.argv[2:])
         print(args)
@@ -43,7 +44,7 @@ class TrainOREvaluate(object):
         model = model.to(self.device)
         train_set = CorruptMnist(train=True)
         dataloader = torch.utils.data.DataLoader(train_set, batch_size=128)
-        optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
+        optimizer = torch.optim.Adam(model.parameters(), lr=float(args.lr))
         criterion = torch.nn.CrossEntropyLoss()
         
         n_epoch = 5

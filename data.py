@@ -25,10 +25,10 @@ class CorruptMnist(Dataset):
         files = os.listdir()
         if train:
             for file_idx in range(5):
-                if f'train_{file_idx}.npy' not in files:
+                if f'train_{file_idx}.npz' not in files:
                     wget.download(f"https://raw.githubusercontent.com/SkafteNicki/dtu_mlops/main/data/corruptmnist/train_{file_idx}.npz")
         else:
-            if "test.npy" not in files:    
+            if "test.npz" not in files:    
                 wget.download("https://raw.githubusercontent.com/SkafteNicki/dtu_mlops/main/data/corruptmnist/test.npz")
     
     def __len__(self):
