@@ -8,19 +8,21 @@ from model import MyAwesomeModel
 
 import matplotlib.pyplot as plt
 
+
 class TrainOREvaluate(object):
-    """ Helper class that will help launch class methods as commands
+    """Helper class that will help launch class methods as commands
         from a single script
     """
+
     def __init__(self):
         parser = argparse.ArgumentParser(
             description="Script for either training or evaluating",
-            usage="python main.py <command>"
+            usage="python main.py <command>",
         )
         parser.add_argument("command", help="Subcommand to run")
         args = parser.parse_args(sys.argv[1:2])
         if not hasattr(self, args.command):
-            print('Unrecognized command')
+            print("Unrecognized command")
             
             parser.print_help()
             exit(1)
@@ -32,8 +34,8 @@ class TrainOREvaluate(object):
     
     def train(self):
         print("Training day and night")
-        parser = argparse.ArgumentParser(description='Training arguments')
-        parser.add_argument('--lr', default=1e-3)
+        parser = argparse.ArgumentParser(description="Training arguments")
+        parser.add_argument("--lr", default=1e-3)
         print(parser)
         # add any additional argument that you want
         args = parser.parse_args(sys.argv[2:])
@@ -59,19 +61,19 @@ class TrainOREvaluate(object):
                 optimizer.step()
                 loss_tracker.append(loss.item())
             print(f"Epoch {epoch+1}/{n_epoch}. Loss: {loss}")        
-        torch.save(model.state_dict(), 'trained_model.pt')
+        torch.save(model.state_dict(), "trained_model.pt")
             
-        plt.plot(loss_tracker, '-')
-        plt.xlabel('Training step')
-        plt.ylabel('Training loss')
+        plt.plot(loss_tracker, "-")
+        plt.xlabel("Training step")
+        plt.ylabel("Training loss")
         plt.savefig("training_curve.png")
         
         return model
             
     def evaluate(self):
         print("Evaluating until hitting the ceiling")
-        parser = argparse.ArgumentParser(description='Training arguments')
-        parser.add_argument('load_model_from', default="")
+        parser = argparse.ArgumentParser(description="Training arguments")
+        parser.add_argument("load_model_from", default="")
         # add any additional argument that you want
         args = parser.parse_args(sys.argv[2:])
         print(args)
@@ -97,5 +99,5 @@ class TrainOREvaluate(object):
         print(f"Test set accuracy {correct/total}")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     TrainOREvaluate()
