@@ -3,8 +3,8 @@ import sys
 
 import torch
 
-from data import CorruptMnist
-from model import MyAwesomeModel
+from src.data.data import CorruptMnist
+from src.models.model import MyAwesomeModel
 
 import matplotlib.pyplot as plt
 
