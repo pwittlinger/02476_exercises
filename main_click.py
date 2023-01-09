@@ -6,8 +6,8 @@ import torch
 import click
 import matplotlib.pyplot as plt
 
-from data import CorruptMnist
-from model import MyAwesomeModel
+from src.data.data import CorruptMnist
+from src.models.model import MyAwesomeModel
 
 #pdb.set_trace()
 
@@ -72,6 +72,7 @@ def evaluate(model_checkpoint):
         x, y = batch
 
         preds = model(x.to("cpu"))
+        print(preds.shape)
         preds = preds.argmax(dim=-1)
 
         correct += (preds == y.to("cpu")).sum().item()

@@ -49,6 +49,8 @@ if __name__ == "__main__":
     dataset_train = CorruptMnist(train=True)
     dataset_test = CorruptMnist(train=False)
     print(dataset_train.data.shape)
+    print(np.array(dataset_train.data.shape[1:]))
     print(dataset_train.targets.shape)
     print(dataset_test.data.shape)
     print(dataset_test.targets.shape)
+    print(len(dataset_train))
