@@ -2,7 +2,7 @@ import pytest
 import torch
 
 from src.models.model import MyAwesomeModel
-from tests import _PATH_DATA,_PROJECT_ROOT
+from tests import _PATH_DATA, _PROJECT_ROOT
 
 model = MyAwesomeModel()
 model_checkpoint = "trained_model.pt"

@@ -1,15 +1,14 @@
 import argparse
-import sys
 import pdb
+import sys
 
-import torch
 import click
 import matplotlib.pyplot as plt
+import torch
 from model import MyAwesomeModel
 
 sys.path.append('./src')
 from data.data import CorruptMnist
-
 
 #pdb.set_trace()
 

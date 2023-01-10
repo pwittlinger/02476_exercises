@@ -1,10 +1,10 @@
 import argparse
-import sys
 import pdb
+import sys
 
-import torch
 import click
 import matplotlib.pyplot as plt
+import torch
 
 from src.data.data import CorruptMnist
 from src.models.model import MyAwesomeModel
