@@ -1,8 +1,9 @@
-import numpy as np
-from torch import nn
-import torch
-import matplotlib.pyplot as plt
 import os
+
+import matplotlib.pyplot as plt
+import numpy as np
+import torch
+from torch import nn
 
 if __name__ == "__main__":
     path = "./data/raw/corruptmnist/"

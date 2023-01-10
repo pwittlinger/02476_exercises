@@ -1,12 +1,11 @@
 import argparse
 import sys
 
+import matplotlib.pyplot as plt
 import torch
 
 from src.data.data import CorruptMnist
 from src.models.model import MyAwesomeModel
-
-import matplotlib.pyplot as plt
 
 
 class TrainOREvaluate(object):
